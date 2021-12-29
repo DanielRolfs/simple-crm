@@ -13,12 +13,12 @@ export class UserComponent implements OnInit {
   user = new User();
   allUsers :any;
 
-  constructor(public dialog: MatDialog, private firestor: AngularFirestore) {
+  constructor(public dialog: MatDialog, private firestore: AngularFirestore) {
 
   }
 
   ngOnInit(): void {
-    this.firestor
+    this.firestore
     .collection('users')
     .valueChanges({idField: 'customIdName'})
     .subscribe((changes: any) => {
